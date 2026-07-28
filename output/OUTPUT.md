@@ -1,139 +1,76 @@
 ---
 summary_id: JOBS-SUMMARY
-updated_at: "2026-07-28T18:00:00+03:00"
+updated_at: "2026-07-29T00:00:00+03:00"
 agent_version: "2.0.0"
 
 sources:
   - meta_id: META-INT-T-001
     file: output/meta/META-INT-T-001.md
     reference: source/INT-T-001.docx
-    processed_at: "2026-07-28T17:00:00+03:00"
-  - meta_id: META-INT-T-002
-    file: output/meta/META-INT-T-002.md
-    reference: source/INT-T-002.docx
-    processed_at: "2026-07-28T17:10:00+03:00"
-  - meta_id: META-INT-T-003
-    file: output/meta/META-INT-T-003.md
-    reference: source/INT-T-003.docx
-    processed_at: "2026-07-28T17:20:00+03:00"
-  - meta_id: META-INT-T-005
-    file: output/meta/META-INT-T-005.md
-    reference: source/INT-T-005.docx
-    processed_at: "2026-07-28T17:45:00+03:00"
-  - meta_id: META-INT-T-004
-    file: output/meta/META-INT-T-004.md
-    reference: source/INT-T-004.docx
-    processed_at: "2026-07-28T17:30:00+03:00"
-  - meta_id: META-INT-T-006
-    file: output/meta/META-INT-T-006.md
-    reference: source/INT-T-006.docx
-    processed_at: "2026-07-28T18:00:00+03:00"
+    processed_at: "2026-07-29T00:00:00+03:00"
 
 tag_definitions:
-  # группа A: кто пользователь
   - {tag: "segment:individual", group: A, facet: "A/segment", definition: "Респондент — физлицо"}
-  - {tag: "segment:business", group: A, facet: "A/segment", definition: "Респондент — представитель бизнеса/компании"}
   - {tag: "status:churned", group: A, facet: "A/status", definition: "Клиент ушёл"}
-  - {tag: "status:churning", group: A, facet: "A/status", definition: "Клиент в процессе ухода"}
-  - {tag: "engagement:high", group: A, definition: "Вовлечённость 8-10 из 10"}
-  - {tag: "engagement:mid", group: A, definition: "Вовлечённость 4-7 из 10"}
-
-  # группа B: что за проблема
+  - {tag: "engagement:high", group: A, definition: "Оценка вовлечённости 8-10"}
   - {tag: "nature:missing_feature", group: B, facet: "B/nature", definition: "Функции нет в продукте"}
-  - {tag: "nature:trust_breach", group: B, facet: "B/nature", definition: "Боль подрывает доверие к данным или продукту"}
-  - {tag: "nature:ux_friction", group: B, facet: "B/nature", definition: "Интерфейс или процесс затрудняют использование"}
-  - {tag: "nature:defect", group: B, facet: "B/nature", definition: "Функция есть, но работает некорректно"}
-  - {tag: "freq:monthly", group: B, facet: "B/freq", definition: "Боль возникает ежемесячно"}
-  - {tag: "freq:rare", group: B, facet: "B/freq", definition: "Боль возникает редко (реже раза в месяц)"}
-  - {tag: "freq:weekly", group: B, facet: "B/freq", definition: "Боль возникает еженедельно"}
-  - {tag: "freq:daily", group: B, facet: "B/freq", definition: "Боль возникает ежедневно"}
-  - {tag: "trust-breach", group: B, definition: "Хотя бы одна боль темы подрывает доверие"}
-  - {tag: "evidence:workaround", group: B, definition: "Хотя бы одна боль темы имеет обходной путь"}
-
-  # группа C: тематика
-  - {tag: "аналитика-трат", group: C, kind: домен, definition: "Анализ и категоризация расходов пользователя"}
-  - {tag: "автонакопления", group: C, kind: домен, definition: "Автоматическое откладывание денег на накопительный счёт"}
-  - {tag: "виртуальные-карты", group: C, kind: домен, definition: "Управление виртуальными картами и подписками"}
-  - {tag: "сводная-отчётность", group: C, kind: домен, definition: "Формирование сводного отчёта по всем бизнес-картам компании"}
-  - {tag: "экспорт-данных", group: C, kind: домен, definition: "Выгрузка данных из банка во внешние системы"}
-  - {tag: "уведомления-о-тратах", group: C, kind: домен, definition: "Получение уведомлений о транзакциях в реальном времени"}
-  - {tag: "управление-семейными-картами", group: C, kind: домен, definition: "Управление семейными картами: лимиты, мониторинг, уведомления"}
-  - {tag: "мнимая-функция", group: C, kind: мотив, definition: "Функция заявлена, но своё назначение не выполняет"}
-  - {tag: "система-молчит", group: C, kind: мотив, definition: "Система не сообщает об ошибках и изменениях статуса операций"}
-
-  - {tag: "ролевой-доступ", group: C, kind: домен, definition: "Разграничение доступа к счетам для разных пользователей (ролевая модель)"}
-  - {tag: "лимиты-бизнес-карт", group: C, kind: домен, definition: "Управление лимитами и их изменение на бизнес-картах"}
-  - {tag: "оформление-карт", group: C, kind: домен, definition: "Визуальное оформление и идентификация разных типов карт в приложении"}
-  - {tag: "контекст-трат", group: C, kind: домен, definition: "Добавление контекстной информации (комментарий, фото чека) к тратам по картам"}
-  - {tag: "кэшбэк-программа", group: C, kind: домен, definition: "Программа лояльности с начислением кэшбэка за покупки"}
-  - {tag: "конвертация-валют", group: C, kind: домен, definition: "Конвертация рублей в иностранную валюту при оплате"}
-
-  # группа D: качество данных
+  - {tag: "nature:trust_breach", group: B, facet: "B/nature", definition: "Боль подрывает доверие к данным или процессам"}
+  - {tag: "nature:ux_friction", group: B, facet: "B/nature", definition: "Функция есть, но пользоваться неудобно"}
+  - {tag: "nature:defect", group: B, facet: "B/nature", definition: "Функция есть, но работает с ошибкой"}
+  - {tag: "freq:monthly", group: B, facet: "B/freq", definition: "Боль возникает раз в месяц"}
+  - {tag: "freq:rare", group: B, facet: "B/freq", definition: "Боль возникает редко"}
+  - {tag: "trust-breach", group: B, definition: "Хотя бы одна боль темы подрывает доверие к данным"}
+  - {tag: "evidence:workaround", group: B, definition: "Хотя бы одна боль темы имеет workaround"}
+  - {tag: "аналитика-трат", group: C, kind: домен, definition: "Разбивка, категоризация и анализ расходов по периодам"}
+  - {tag: "автоматические-накопления", group: C, kind: домен, definition: "Автоправила пополнения сбережений и контроль их исполнения"}
+  - {tag: "виртуальные-карты", group: C, kind: домен, definition: "Управление реквизитами и использование виртуальных карт"}
+  - {tag: "система-молчит", group: C, kind: мотив, definition: "Система перестаёт работать или ошибается без уведомления пользователя"}
   - {tag: "evidence:spontaneous", group: D, definition: "Заговорил сам, без вопроса интервьюера"}
-  - {tag: "evidence:past-behavior", group: D, definition: "Рассказ основан на конкретном опыте, а не на гипотетическом сценарии"}
-  - {tag: "emotion:frustration", group: D, definition: "Эмоция разочарования или досады"}
-  - {tag: "emotion:anxiety", group: D, definition: "Эмоция тревоги или беспокойства"}
-  - {tag: "emotion:resignation", group: D, definition: "Эмоция смирения или безвыходности"}
-  - {tag: "emotion:sarcasm", group: D, definition: "Эмоция сарказма или иронии"}
-  - {tag: "emotion:humor", group: D, definition: "Эмоция юмора или самоиронии"}
+  - {tag: "evidence:past-behavior", group: D, definition: "Описывает реальный опыт, а не гипотетический сценарий"}
+  - {tag: "emotion:frustration", group: D, definition: "Разочарование/раздражение"}
+  - {tag: "emotion:anxiety", group: D, definition: "Тревога/беспокойство"}
+  - {tag: "emotion:resignation", group: D, definition: "Смирение/принятие плохого положения"}
 ---
 
 # Свод jobs
 
-**Интервью в своде:** META-INT-T-001, META-INT-T-002, META-INT-T-003, META-INT-T-004, META-INT-T-005, META-INT-T-006
+**Интервью в своде:** META-INT-T-001
 
 ## Темы
 
 | ID | Тема | Теги | Интервью |
 |----|------|------|----------|
-| T-01 | Категоризация расходов по категориям и периодам | аналитика-трат, мнимая-функция | META-INT-T-001, META-INT-T-003 |
-| T-02 | Автоматическое откладывание с гарантией и уведомлением | автонакопления, система-молчит | META-INT-T-001 |
-| T-03 | Управление реквизитами виртуальной карты | виртуальные-карты, мнимая-функция | META-INT-T-001 |
-| T-04 | Единая выписка по всем бизнес-картам | сводная-отчётность, nature:missing_feature | META-INT-T-002 |
-| T-05 | Экспорт данных в бухгалтерские форматы (CSV, 1С) | экспорт-данных, мнимая-функция | META-INT-T-002, META-INT-T-005 |
-| T-06 | Аналитика расходов по бизнес-картам с категориями | аналитика-трат, nature:missing_feature | META-INT-T-002 |
-| T-07 | Уведомления о транзакциях в реальном времени | уведомления-о-тратах, мнимая-функция | META-INT-T-002, META-INT-T-005 |
-| T-08 | Индивидуальные лимиты и контроль на детские карты | управление-семейными-картами, мнимая-функция | META-INT-T-003, META-INT-T-006 |
-| T-09 | Мониторинг карты пожилого родственника в реальном времени | управление-семейными-картами, мнимая-функция | META-INT-T-003 |
-| T-10 | Ролевой доступ к счетам для бухгалтера | ролевой-доступ, nature:missing_feature | META-INT-T-005 |
-| T-11 | Изменение лимитов на бизнес-картах онлайн | лимиты-бизнес-карт, nature:missing_feature | META-INT-T-005 |
-| T-12 | Автоперевод карманных денег по дням недели | управление-семейными-картами, мнимая-функция | META-INT-T-006 |
-| T-13 | Визуальное различие личных и бизнес-карт | оформление-карт | META-INT-T-006 |
-| T-14 | Контекст трат по бизнес-картам с комментарием и фото | контекст-трат | META-INT-T-006 |
-| T-15 | Экспорт операций для внешних приложений с выбором периода и форматом | экспорт-данных, nature:missing_feature, nature:defect | META-INT-T-004 |
-| T-16 | Прозрачность кэшбэка по каждой операции | кэшбэк-программа, trust-breach | META-INT-T-004 |
-| T-17 | Прозрачность курса конвертации до подтверждения | конвертация-валют, trust-breach | META-INT-T-004 |
+| T-01 | Точная аналитика расходов по категориям и произвольным периодам | аналитика-трат, nature:missing_feature | META-INT-T-001 |
+| T-02 | Автоматическое накопление с гарантией срабатывания и уведомлением об ошибке | автоматические-накопления, система-молчит, nature:trust_breach, trust-breach | META-INT-T-001 |
+| T-03 | Управление реквизитами виртуальной карты | виртуальные-карты, nature:ux_friction | META-INT-T-001 |
 
-## T-01 — Категоризация расходов по категориям и периодам
+## T-01 — Точная аналитика расходов по категориям и произвольным периодам
 
-**Job:** Когда я контролирую расходы, я хочу видеть точную разбивку трат по категориям и периодам, чтобы понимать структуру бюджета без ручного труда
+**Job:** Когда я управляю семейным бюджетом, я хочу видеть точную разбивку трат по категориям и произвольным периодам, чтобы контролировать расходы без ручного труда
 
-**Теги:** segment:individual, status:churned, status:churning, engagement:high, engagement:mid, nature:missing_feature, freq:monthly, freq:weekly, evidence:workaround, аналитика-трат, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:frustration, emotion:resignation
+**Теги:** segment:individual, status:churned, engagement:high, nature:missing_feature, freq:monthly, evidence:workaround, аналитика-трат, evidence:spontaneous, evidence:past-behavior, emotion:frustration
 
-**Доли:** A/segment: individual 100% | A/status: churned 50%, churning 50% | B/nature: missing_feature 100% | B/freq: monthly 67%, weekly 33% | C/домен: аналитика-трат 100% | C/мотив: мнимая-функция 100%
+**Доли:** A/segment: individual 100% | A/status: churned 100% | B/nature: missing_feature 100% | B/freq: monthly 100% | C/домен: аналитика-трат 100%
 
-**Сигналы:** churn-driver, hi-freq, multi-interview
+**Сигналы:** churn-driver
 
 **Причина ухода:** META-INT-T-001 (churned): «несоответствие ожиданий об аналитике реальным возможностям продукта»
-META-INT-T-003 (churning): «семейный счёт не выполняет обещанных функций: нет категоризации детских трат»
 
 **Участники:**
 - META-INT-T-001 (j1): «Когда я управляю семейным бюджетом, я хочу видеть точную разбивку трат по категориям и произвольным периодам, чтобы контролировать расходы без ручного труда» — «Я думала, приложение заменит мне Excel. Не заменило.»
   боли: p1 (missing_feature), p2 (missing_feature)
-- META-INT-T-003 (j2): «Когда ребёнок тратит деньги, я хочу видеть разбивку по категориям (игры, еда, транспорт), а не всё подряд в «Разном»» — «У него треть всех трат в категории «Разное». Что это значит?»
-  боли: p2 (missing_feature)
 
-## T-02 — Автоматическое откладывание с гарантией и уведомлением
+## T-02 — Автоматическое накопление с гарантией срабатывания и уведомлением об ошибке
 
 **Job:** Когда я получаю доход, я хочу автоматически откладывать фиксированную сумму на накопления с гарантией, что это сработает, и с уведомлением в случае ошибки
 
-**Теги:** segment:individual, status:churned, engagement:high, nature:trust_breach, freq:monthly, trust-breach, автонакопления, система-молчит, evidence:spontaneous, evidence:past-behavior, emotion:anxiety, emotion:frustration
+**Теги:** segment:individual, status:churned, engagement:high, nature:trust_breach, freq:monthly, trust-breach, автоматические-накопления, система-молчит, evidence:spontaneous, evidence:past-behavior, emotion:anxiety, emotion:frustration
 
-**Доли:** A/segment: individual 100% | A/status: churned 100% | B/nature: trust_breach 100% | B/freq: monthly 100% | C/домен: автонакопления 100% | C/мотив: система-молчит 100%
+**Доли:** A/segment: individual 100% | A/status: churned 100% | B/nature: trust_breach 100% | B/freq: monthly 100% | C/домен: автоматические-накопления 100% | C/мотив: система-молчит 100%
 
 **Сигналы:** churn-driver, trust-breach, no-workaround
 
-**Причина ухода:** META-INT-T-001 (churned): «накопленное недоверие к данным: 4 из 6 болей с trust_breach (автоперевод, сообщения, оспаривание, расхождение балансов) — мотив „система молчит или вводит в заблуждение“»
+**Причина ухода:** META-INT-T-001 (churned): «накопленное недоверие к данным: 4 из 6 болей с trust_breach (автоперевод, сообщения, оспаривание, расхождение балансов) — мотив «система молчит или вводит в заблуждение»»
 
 **Участники:**
 - META-INT-T-001 (j2): «Когда я получаю доход, я хочу автоматически откладывать фиксированную сумму на накопления с гарантией, что это сработает, и с уведомлением в случае ошибки» — «Каждый месяц с карты автоматически переводится фиксированная сумма»
@@ -143,9 +80,9 @@ META-INT-T-003 (churning): «семейный счёт не выполняет �
 
 **Job:** Когда у меня много подписок, я хочу изолировать их на одной виртуальной карте, чьими реквизитами я могу управлять в любой момент
 
-**Теги:** segment:individual, status:churned, engagement:high, nature:ux_friction, freq:rare, evidence:workaround, виртуальные-карты, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:resignation
+**Теги:** segment:individual, status:churned, engagement:high, nature:ux_friction, freq:rare, evidence:workaround, виртуальные-карты, evidence:spontaneous, evidence:past-behavior, emotion:resignation
 
-**Доли:** A/segment: individual 100% | A/status: churned 100% | B/nature: ux_friction 100% | B/freq: rare 100% | C/домен: виртуальные-карты 100% | C/мотив: мнимая-функция 100%
+**Доли:** A/segment: individual 100% | A/status: churned 100% | B/nature: ux_friction 100% | B/freq: rare 100% | C/домен: виртуальные-карты 100%
 
 **Сигналы:** —
 
@@ -153,197 +90,12 @@ META-INT-T-003 (churning): «семейный счёт не выполняет �
 - META-INT-T-001 (j3): «Когда у меня много подписок, я хочу изолировать их на одной виртуальной карте, чьими реквизитами я могу управлять в любой момент» — «Привязать их все к одной виртуальной карте, чтобы легко отслеживать расходы»
   боли: p4 (ux_friction)
 
-## T-04 — Единая выписка по всем бизнес-картам
-
-**Job:** Когда я управляю расходами компании по бизнес-картам, я хочу получать единую выписку по всем картам с разбивкой по сотрудникам в одном файле, чтобы не тратить часы на ручное сведение
-
-**Теги:** segment:business, status:churning, engagement:mid, nature:missing_feature, freq:monthly, evidence:workaround, сводная-отчётность, evidence:spontaneous, evidence:past-behavior, emotion:frustration
-
-**Доли:** A/segment: business 100% | A/status: churning 100% | B/nature: missing_feature 100% | B/freq: monthly 100% | C/домен: сводная-отчётность 100%
-
-**Сигналы:** churn-driver
-
-**Причина ухода:** META-INT-T-002 (churning): «хроническое игнорирование запросов: три обращения без результата за год» — «Я написал в поддержку больше года назад. До сих пор работают.»
-
-**Участники:**
-- META-INT-T-002 (j1): «Когда я управляю расходами компании по бизнес-картам, я хочу получать единую выписку по всем картам с разбивкой по сотрудникам в одном файле, чтобы не тратить часы на ручное сведение» — «Мой бухгалтер тратит четыре часа в месяц, чтобы свести их в один файл»
-  боли: p1 (missing_feature)
-
-## T-05 — Экспорт данных в бухгалтерские форматы (CSV, 1С)
-
-**Job:** Когда я веду бухгалтерию бизнеса, я хочу выгружать данные из банка в формате, совместимом с бухгалтерскими системами (CSV, 1С), чтобы не тратить часы на ручную адаптацию
-
-**Теги:** segment:business, status:churning, status:churned, engagement:mid, nature:defect, nature:missing_feature, freq:monthly, trust-breach, evidence:workaround, экспорт-данных, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:frustration, emotion:sarcasm
-
-**Доли:** A/segment: business 100% | A/status: churning 50%, churned 50% | B/nature: defect 50%, missing_feature 50% | B/freq: monthly 100% | C/домен: экспорт-данных 100% | C/мотив: мнимая-функция 100%
-
-**Сигналы:** churn-driver, trust-breach, multi-interview
-
-**Причина ухода:** META-INT-T-002 (churning): «сознательное ухудшение продукта (PDF в Excel) подрывает доверие к подходу банка» — «Это не экспорт. Это издевательство.»
-META-INT-T-005 (churned): «обман в рекламе: "интеграция" ≠ PDF по почте»
-
-**Участники:**
-- META-INT-T-002 (j2): «Когда я выгружаю данные из банка в бухгалтерию, я хочу получать настоящий Excel/CSV с табличными данными, а не PDF, вставленный в Excel, чтобы не перепечатывать вручную» — «Открываю — а там не таблица с данными, а тот же PDF, просто вставленный в Excel»
-  боли: p2 (defect)
-- META-INT-T-005 (j1): «Когда я веду бухгалтерию бизнеса, я хочу выгружать выписки по картам в формате, совместимом с 1С, чтобы бухгалтер тратила час в месяц, а не два дня» — «Бухгалтер потратила два дня, чтобы вручную адаптировать формат под 1С. Два дня.»
-  боли: p1 (missing_feature)
-
-## T-06 — Аналитика расходов по бизнес-картам с категориями
-
-**Job:** Когда я контролирую расходы менеджеров по бизнес-картам, я хочу видеть аналитику с разбивкой по категориям и сотрудникам, а не просто список транзакций
-
-**Теги:** segment:business, status:churning, engagement:mid, nature:missing_feature, freq:weekly, evidence:workaround, аналитика-трат, evidence:spontaneous, evidence:past-behavior, emotion:frustration
-
-**Доли:** A/segment: business 100% | A/status: churning 100% | B/nature: missing_feature 100% | B/freq: weekly 100% | C/домен: аналитика-трат 100%
-
-**Сигналы:** churn-driver, hi-freq
-
-**Причина ухода:** META-INT-T-002 (churning): «разрыв между качеством личного и бизнес-сегмента — „забытый угол“» — «В предыдущем банке была аналитика по каждой карте: категории расходов, сравнение по месяцам… Здесь — просто список: дата, сумма, название.»
-
-**Участники:**
-- META-INT-T-002 (j3): «Когда я контролирую расходы менеджеров по бизнес-картам, я хочу видеть аналитику с разбивкой по категориям и сотрудникам, а не просто список транзакций» — «Я не могу управлять тем, чего не вижу»
-  боли: p3 (missing_feature)
-
-## T-07 — Уведомления о транзакциях в реальном времени
-
-**Job:** Когда сотрудник тратит деньги с бизнес-карты, я хочу получать своевременные уведомления с возможностью настройки порога суммы, чтобы контролировать расходы в реальном времени и не пропускать несогласованные траты
-
-**Теги:** segment:business, status:churning, status:churned, engagement:mid, nature:defect, nature:missing_feature, freq:daily, freq:weekly, evidence:workaround, уведомления-о-тратах, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:frustration
-
-**Доли:** A/segment: business 100% | A/status: churning 50%, churned 50% | B/nature: defect 50%, missing_feature 50% | B/freq: daily 50%, weekly 50% | C/домен: уведомления-о-тратах 100% | C/мотив: мнимая-функция 100%
-
-**Сигналы:** churn-driver, hi-freq, multi-interview
-
-**Причина ухода:** META-INT-T-002 (churning): «хроническое игнорирование запросов: три обращения без результата за год» — «Если сотрудник потратил деньги в 11 утра, а я узнал в 11 вечера — какой в этом смысл?»
-
-**Участники:**
-- META-INT-T-002 (j4): «Когда сотрудник совершает операцию по бизнес-карте, я хочу получать уведомление в реальном времени, а не с задержкой до суток» — «Если сотрудник потратил деньги в 11 утра, а я узнал в 11 вечера — какой в этом смысл?»
-  боли: p4 (defect)
-- META-INT-T-005 (j3): «Когда сотрудники тратят деньги с бизнес-карт, я хочу получать уведомления только о крупных операциях (выше порога), чтобы не пропускать несогласованные траты» — «Я пропустил одну крупную трату, которую не согласовывал. Узнал через три недели.»
-  боли: p3 (missing_feature)
-
-## T-08 — Индивидуальные лимиты и контроль на детские карты
-
-**Job:** Когда я управляю семейными финансами, я хочу настраивать лимиты и категории контроля на детские карты индивидуально для каждого ребёнка, чтобы управлять финансами семьи без обходных путей
-
-**Теги:** segment:individual, segment:business, status:churning, engagement:mid, engagement:high, nature:missing_feature, freq:monthly, freq:weekly, evidence:workaround, управление-семейными-картами, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:frustration, emotion:resignation
-
-**Доли:** A/segment: individual 50%, business 50% | A/status: churning 100% | B/nature: missing_feature 100% | B/freq: monthly 67%, weekly 33% | C/домен: управление-семейными-картами 100% | C/мотив: мнимая-функция 100%
-
-**Сигналы:** churn-driver, hi-freq, multi-interview, multi-segment
-
-**Причина ухода:** META-INT-T-003 (churning): «семейный счёт не выполняет обещанных функций: нет самостоятельной установки лимитов»
-META-INT-T-006 (churning): «продукт не учитывает потребности реальных семей с детьми разного возраста»
-
-**Участники:**
-- META-INT-T-003 (j1): «Когда я управляю семейными финансами, я хочу самостоятельно устанавливать лимиты на карту ребёнка за минуту, а не через чат за три дня, и видеть остаток лимита в приложении» — «Почему я не могу сделать это сама за минуту?»
-  боли: p1 (missing_feature), p5 (missing_feature)
-- META-INT-T-006 (j1): «Когда у меня дети разного возраста, я хочу настроить каждому свой лимит и категории контроля, чтобы управлять финансами семьи индивидуально, а не „одним размером для всех“» — «Почему я не могу настроить индивидуально? Это же как в семье: одному 14, другому 8. Но банк считает, что все дети одинаковые.»
-  боли: p1 (missing_feature)
-
-## T-09 — Мониторинг карты пожилого родственника в реальном времени
-
-**Job:** Когда пожилой родственник живёт в другом городе, я хочу видеть баланс его карты в реальном времени и получать работающие уведомления о его операциях, чтобы быть уверенной, что у него всё в порядке с деньгами
-
-**Теги:** segment:individual, status:churning, engagement:mid, nature:defect, nature:missing_feature, freq:daily, freq:weekly, trust-breach, evidence:workaround, управление-семейными-картами, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:frustration, emotion:anxiety, emotion:resignation
-
-**Доли:** A/segment: individual 100% | A/status: churning 100% | B/nature: defect 67%, missing_feature 33% | B/freq: daily 33%, weekly 67% | C/домен: управление-семейными-картами 100% | C/мотив: мнимая-функция 100%
-
-**Сигналы:** churn-driver, trust-breach, hi-freq
-
-**Причина ухода:** META-INT-T-003 (churning): «региональные ограничения (синхронизация раз в сутки, отсутствие уведомлений) делают продукт бесполезным для ухода за пожилыми родственниками»
-
-**Участники:**
-- META-INT-T-003 (j3): «Когда пожилой родственник живёт в другом городе, я хочу видеть баланс его карты в реальном времени и получать уведомления о его операциях» — «Я вижу вчерашнюю цифру. Это бесполезно.»
-  боли: p3 (defect), p5 (missing_feature)
-- META-INT-T-003 (j4): «Когда я настраиваю уведомления по семейным картам, я хочу чтобы они работали для всех карт одинаково, независимо от региона выпуска» — «По маминой карте уведомления не приходят вообще.»
-  боли: p4 (defect), p5 (missing_feature)
-
-## T-10 — Ролевой доступ к счетам для бухгалтера
-
-**Job:** Когда у меня есть бухгалтер на аутсорсе, я хочу дать ей доступ только к бизнес-счетам, а не к моим личным картам, чтобы соблюдать конфиденциальность личных расходов
-
-**Теги:** segment:business, status:churned, engagement:mid, nature:missing_feature, freq:daily, ролевой-доступ, evidence:spontaneous, evidence:past-behavior, emotion:frustration
-
-**Доли:** A/segment: business 100% | A/status: churned 100% | B/nature: missing_feature 100% | B/freq: daily 100% | C/домен: ролевой-доступ 100%
-
-**Сигналы:** hi-freq, no-workaround
-
-**Участники:**
-- META-INT-T-005 (j2): «Когда у меня есть бухгалтер на аутсорсе, я хочу дать ей доступ только к бизнес-счетам, а не к моим личным картам» — «Бухгалтер видит мои личные траты. Мне нечего скрывать, но это неправильно.»
-  боли: p2 (missing_feature)
-
-## T-11 — Изменение лимитов на бизнес-картах онлайн
-
-**Job:** Когда у меня меняются объёмы продаж по сезону, я хочу менять лимиты на бизнес-картах онлайн в приложении, а не ехать в отделение, чтобы управлять расходами без потери времени
-
-**Теги:** segment:business, status:churned, engagement:mid, nature:missing_feature, freq:monthly, лимиты-бизнес-карт, evidence:spontaneous, evidence:past-behavior, emotion:frustration, emotion:sarcasm
-
-**Доли:** A/segment: business 100% | A/status: churned 100% | B/nature: missing_feature 100% | B/freq: monthly 100% | C/домен: лимиты-бизнес-карт 100%
-
-**Сигналы:** churn-driver, no-workaround
-
-**Причина ухода:** META-INT-T-005 (churned): «ручное управление лимитами через отделение — неприемлемо для онлайн-предпринимателя»
-
-**Участники:**
-- META-INT-T-005 (j4): «Когда у меня меняются объёмы продаж по сезону, я хочу менять лимиты на бизнес-картах онлайн в приложении, а не ехать в отделение» — «Я могу открыть счёт онлайн, выпустить карту онлайн, но изменить лимит — только в отделении. Где логика?»
-  боли: p4 (missing_feature)
-
-## T-12 — Автоперевод карманных денег по дням недели
-
-**Job:** Когда я выдаю детям карманные деньги, я хочу настроить автоперевод по дням недели (каждую пятницу), а не по числам месяца
-
-**Теги:** segment:business, status:churning, engagement:high, nature:missing_feature, freq:weekly, evidence:workaround, управление-семейными-картами, мнимая-функция, evidence:spontaneous, evidence:past-behavior, emotion:frustration, emotion:humor
-
-**Доли:** A/segment: business 100% | A/status: churning 100% | B/nature: missing_feature 100% | B/freq: weekly 100% | C/домен: управление-семейными-картами 100% | C/мотив: мнимая-функция 100%
-
-**Сигналы:** churn-driver, hi-freq
-
-**Причина ухода:** META-INT-T-006 (churning): «продукт не учитывает потребности реальных семей с детьми разного возраста»
-
-**Участники:**
-- META-INT-T-006 (j2): «Когда я выдаю детям карманные деньги, я хочу настроить автоперевод по дням недели (каждую пятницу), а не по числам месяца» — «15-е число — это не пятница. Я чувствую себя плохой матерью из-за того, что банк не умеет в дни недели.»
-  боли: p2 (missing_feature)
-
-## T-13 — Визуальное различие личных и бизнес-карт
-
-**Job:** Когда у меня и личные, и бизнес-карты в одном приложении, я хочу визуально их различать (цветом/дизайном), чтобы не путать и не платить бизнес-картой за личные покупки
-
-**Теги:** segment:business, status:churning, engagement:high, nature:ux_friction, freq:weekly, evidence:workaround, оформление-карт, evidence:spontaneous, evidence:past-behavior, emotion:frustration
-
-**Доли:** A/segment: business 100% | A/status: churning 100% | B/nature: ux_friction 100% | B/freq: weekly 100% | C/домен: оформление-карт 100%
-
-**Сигналы:** churn-driver, hi-freq
-
-**Причина ухода:** META-INT-T-006 (churning): «бизнес-функционал не доделан: нет комментариев, нет экспорта, нет визуальных различий»
-
-**Участники:**
-- META-INT-T-006 (j3): «Когда у меня и личные, и бизнес-карты в одном приложении, я хочу визуально их различать (цветом/дизайном), чтобы не путать и не платить бизнес-картой за личные покупки» — «Я несколько раз по ошибке оплачивала личные покупки бизнес-картой и наоборот.»
-  боли: p3 (ux_friction)
-
-## T-14 — Контекст трат по бизнес-картам с комментарием и фото
-
-**Job:** Когда преподаватели тратят деньги с бизнес-карт, я хочу видеть контекст каждой траты (комментарий, фото чека), чтобы понимать, на что ушли деньги
-
-**Теги:** segment:business, status:churning, engagement:high, nature:missing_feature, freq:monthly, evidence:workaround, контекст-трат, evidence:spontaneous, evidence:past-behavior, emotion:frustration
-
-**Доли:** A/segment: business 100% | A/status: churning 100% | B/nature: missing_feature 100% | B/freq: monthly 100% | C/домен: контекст-трат 100%
-
-**Сигналы:** churn-driver
-
-**Причина ухода:** META-INT-T-006 (churning): «бизнес-функционал не доделан: нет комментариев, нет экспорта, нет визуальных различий»
-
-**Участники:**
-- META-INT-T-006 (j4): «Когда преподаватели тратят деньги с бизнес-карт, я хочу видеть контекст каждой траты (комментарий, фото чека), чтобы понимать, на что ушли деньги» — «Я не знаю, это бумага для занятий или преподаватель купил сыну тетрадки.»
-  боли: p4 (missing_feature)
-
 ## Боли вне jobs
 
 | Боль | Источник | Природа | Trust | Цитата |
 |------|----------|---------|:-----:|--------|
-| p5 Сообщение к переводу теряется без предупреждения | META-INT-T-001 | ux_friction | ✔ | «Нет предупреждения: „Получатель не является клиентом банка, сообщение не будет доставлено“» |
-| p6 Форма оспаривания транзакции — пустышка | META-INT-T-001 | defect | ✔ | «Ты нажимаешь „Отправить“, видишь анимацию отправки, а на самом деле ничего не уходит» |
-| p5 Экспорт выписок по бизнес-картам — только через поддержку | META-INT-T-006 | missing_feature | | «Почему нельзя сделать кнопку «Экспорт в Excel» в интерфейсе? Почему я должна дёргать поддержку ради этого? Я чувствую себя попрошайкой.» |
+| Сообщение к переводу молча не доставляется получателям из других банков | META-INT-T-001 | ux_friction | ✔ | «Нет предупреждения: «Получатель не является клиентом банка, сообщение не будет доставлено».» |
+| Форма оспаривания в приложении имитирует отправку, но не создаёт заявку | META-INT-T-001 | defect | ✔ | «Ты нажимаешь «Отправить», видишь анимацию отправки, а на самом деле ничего не уходит.» |
 
 ## Критичность
 
