@@ -54,19 +54,27 @@ done
 
 ITERATION=$((LAST_ITERATION + 1))
 
+# Лимит итераций = количество мет (без повторов)
+TOTAL_META=$(ls "$META_DIR"/META-*.md 2>/dev/null | wc -l)
+if [ "$TOTAL_META" -eq 0 ]; then
+    echo "Мета-файлы не найдены в $META_DIR — завершение."
+    exit 0
+fi
+MAX_ITERATIONS=$TOTAL_META
+echo "  Лимит итераций: $MAX_ITERATIONS (ровно по числу мет)"
+
+RETRY_COUNT=0
+
 # === Основной цикл ===
 while true; do
-    echo "=== Итерация $ITERATION ==="
-    echo "  Агент: opencode run --agent $AGENT"
-    echo "  PROGRESS_DIR=$PROGRESS_DIR"
-
-    # Проверяем — есть ли META-*.md в папке мет
-    META_COUNT=$(ls "$META_DIR"/META-*.md 2>/dev/null | wc -l)
-    if [ "$META_COUNT" -eq 0 ]; then
-        echo "  Мета-файлы не найдены в $META_DIR — завершение."
-        echo "нечего обрабатывать" > "$PROGRESS_DIR/$ITERATION.done.md"
+    if [ "$ITERATION" -gt "$MAX_ITERATIONS" ]; then
+        echo "=== Достигнут лимит итераций ($MAX_ITERATIONS) — останов ==="
         break
     fi
+
+    echo "=== Итерация $ITERATION/$MAX_ITERATIONS ==="
+    echo "  Агент: opencode run --agent $AGENT"
+    echo "  PROGRESS_DIR=$PROGRESS_DIR"
 
     # Вызов opencode
     # После перехода на gigacode замени на:
@@ -96,8 +104,17 @@ PROGRESS_DIR=$PROGRESS_DIR. Текущая итерация: $ITERATION. \
     if [ -f "$PROGRESS_DIR/$ITERATION.done.md" ]; then
         echo "  $PROGRESS_DIR/$ITERATION.done.md найден — переход к итерации $((ITERATION + 1))"
         ITERATION=$((ITERATION + 1))
+        RETRY_COUNT=0
     else
-        echo "  $PROGRESS_DIR/$ITERATION.done.md НЕ найден — повтор итерации $ITERATION"
+        RETRY_COUNT=$((RETRY_COUNT + 1))
+        if [ "$RETRY_COUNT" -ge 3 ]; then
+            echo "  $PROGRESS_DIR/$ITERATION.done.md не создан 3 раза — принудительный сдвиг"
+            echo "$ITERATION failed after 3 retries" > "$PROGRESS_DIR/$ITERATION.failed.md"
+            ITERATION=$((ITERATION + 1))
+            RETRY_COUNT=0
+        else
+            echo "  $PROGRESS_DIR/$ITERATION.done.md НЕ найден — повтор $RETRY_COUNT/3"
+        fi
     fi
 
     sleep 2
