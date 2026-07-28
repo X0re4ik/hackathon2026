@@ -17,7 +17,7 @@ WORKDIR="$(cd "$(dirname "$0")" && pwd)"
 AGENT="${OPENCODE_AGENT:-build}"           # для opencode; gigacode не использует --agent
 META_DIR="${META_DIR:-$WORKDIR/../output/meta}"
 SUMMARY="${SUMMARY:-$WORKDIR/../output/OUTPUT.md}"
-PROGRESS_DIR="${PROGRESS_DIR:-$WORKDIR/../progress/merge}"
+PROGRESS_DIR="${PROGRESS_DIR:-$WORKDIR/progress}"
 MAX_TURNS="${MAX_TURNS:-30}"
 
 if [ ! -f "$WORKDIR/MAIN_GOAL.md" ]; then
@@ -60,7 +60,7 @@ if [ "$TOTAL_META" -eq 0 ]; then
     echo "Мета-файлы не найдены в $META_DIR — завершение."
     exit 0
 fi
-MAX_ITERATIONS=$TOTAL_META
+MAX_ITERATIONS=$((TOTAL_META + 2))
 echo "  Лимит итераций: $MAX_ITERATIONS (ровно по числу мет)"
 
 RETRY_COUNT=0
@@ -117,5 +117,4 @@ PROGRESS_DIR=$PROGRESS_DIR. Текущая итерация: $ITERATION. \
         fi
     fi
 
-    sleep 2
 done
